@@ -1,5 +1,7 @@
 .App {
     text-align: center;
+    padding: 20px;
+    background-color: blue;
 }
 
 .img {
@@ -32,10 +34,9 @@
 }
 
 .rating {
-    border: 1px solid black;
+    border: 1px solid red;
     width: 100px;
-    margin-left: 630px;
+    margin-left: 610px;
     margin-bottom: 30px;
-    background-color: red;
     border-radius: 10px;
 }

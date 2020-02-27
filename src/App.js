@@ -35,9 +35,16 @@ class App extends Component {
       
   ],
           keyword : "",
-          rate : ""
+          rate : 0,
+          isLoading:true
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({isLoading: false})
+    }, 5000);
+  }
+  
 addMovie = movie => {
   this.setState({
     movies: this.state.movies.concat(movie)
@@ -48,18 +55,23 @@ getKeyword = (word) => {
     keyword: word
   });
 };
-getRating = (rate) => {
+getRating = (z) => {
   this.setState({
-    rating: rate
+    rate: z
   });
 };
+
+ 
+
+
+
 
   render() {
     return (
       <div className="App">
         <Search search={y =>this.getKeyword(y)}/>
         <Rating rating={z =>this.getRating(z)}/>
-       <ListMovies movies={this.state.movies.filter(el => el.rating>=this.state.rating && el.name.toLowerCase().includes(this.state.keyword.toLowerCase()))}/>
+       <ListMovies isLoading={this.state.isLoading} movies={this.state.movies.filter(el =>el.rating>=this.state.rate && el.name.toLowerCase().includes(this.state.keyword.toLowerCase()))}/>
        <br/>
        <AddModal add={x =>this.addMovie(x)}/>   
       </div>

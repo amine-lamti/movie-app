@@ -21,7 +21,7 @@ class AddModal extends Component {
           image : this.state.image,
           rating : this.state.rating
       });
-      this.setState({show: this.state.show});
+      this.setState({show: false});
   };
   render() {
     return (

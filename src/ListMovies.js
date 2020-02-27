@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MovieCard from "./MovieCard";
-
-
+import HOC from './HOC'
 
 class ListMovies extends Component {
     render() {
@@ -13,4 +12,4 @@ class ListMovies extends Component {
     }
 }
 
-export default ListMovies;
+export default HOC(ListMovies);
